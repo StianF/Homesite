@@ -1,0 +1,29 @@
+<h1><% title (I18n.locale.to_s == 'no')?"Prosjekter":"Projects"%></h1>
+
+<table>
+  <tr>
+    <th><%= (I18n.locale.to_s == 'no')?"Tittel":"Title"%></th>
+    <th><%= (I18n.locale.to_s == 'no')?"Beskrivelse":"Description"%></th>
+    <th>Url</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= (I18n.locale.to_s == 'no')?"#{project.title_no}":"#{project.title_en}" %></td>
+    <td><%= (I18n.locale.to_s == 'no')?"#{project.description_no}":"#{project.description_en}" %></td>
+    <td><%= project.url %></td>
+    <td><%= project.date %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>

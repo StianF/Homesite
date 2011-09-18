@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div id="header" class="topbar-wrapper" style="z-index: 5;">
+      <div class="topbar">
+        <div class="fill">
+          <div class="container-fluid">
+            <h3><%#= link_to "ISFiT Internal", root_path, :class => :logo %></h3>
+            <%#= render :partial => 'internal_tabs/tabs', :locals => {:tabs => InternalTab.roots} %>
+            <ul>
+              <li><%= link_to (I18n.locale.to_s == 'no')?"Hjem":"Home", root_path %></li>
+              <li><%= link_to (I18n.locale.to_s == 'no')?"Jobb":"Employments", "/employments" %></li>
+              <li><%= link_to (I18n.locale.to_s == 'no')?"Prosjekter":"Projects", "/projects" %></li>
+            </ul>
+            <ul>
+              <li><%= link_to (image_tag "no_g.png"), "?locale=no" %></li>
+              <li><%= link_to (image_tag "en_g.png"), "?locale=en" %></li>
+            </ul>
+            <%# if current_user %>
+              <ul class="nav secondary-nav">
+                <li class="menu">
+                  <a class="menu" href="<%= ((current_user)? "#" : login_url) %>" class="menu"><%= ((current_user)? "#{current_user.login}" : "Login") %></a>
+                  <% if current_user %>
+                  <ul class="menu-dropdown">
+                    <!--<li><a href="#">Edit profile</a></li>
+                    <li class="divider"></li>-->
+                    <li><a href="/logout">Logout</a></li>
+                  </ul>
+                  <%end%>
+                </li>
+              </ul>
+            <%# end %>
+          </div>
+        </div>
+      </div>
+    </div>
+        
+    <div class="container-fluid content-margin">
+      <div id="submeny" class="content"><!-- Start submeny -->
+        <%#= render :partial => 'internal_tabs/sublinks', :locals => {:sublinks => current_tab.children } %>
+      </div>
+    <div id="sidebar" class="sidebar">
+      <div class="widget">
+        <%#= render :partial => 'internal_tabs/groups', :locals => {:menu_groups => current_sublink.children }%>
+      </div>
+      <%= yield :sidebar %>
+    </div>
+    <div id="content" class="content">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

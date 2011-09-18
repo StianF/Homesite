@@ -1,0 +1,28 @@
+<% title "Employment" %>
+
+<p>
+  <strong>Company:</strong>
+  <%= @employment.company %>
+</p>
+<p>
+  <strong>From:</strong>
+  <%= @employment.from %>
+</p>
+<p>
+  <strong>To:</strong>
+  <%= @employment.to %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @employment.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @employment.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_employment_path(@employment) %> |
+  <%= link_to "Destroy", @employment, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", employments_path %>
+</p>
