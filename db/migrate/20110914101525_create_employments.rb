@@ -4,8 +4,10 @@ class CreateEmployments < ActiveRecord::Migration
       t.string :company
       t.datetime :from
       t.datetime :to
+      t.boolean :current
       t.string :title
-      t.text :description
+      t.text :description_en
+      t.text :description_no
       t.timestamps
     end
   end

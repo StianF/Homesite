@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(:version => 20110915214858) do
     t.string   "company"
     t.datetime "from"
     t.datetime "to"
+    t.boolean  "current"
     t.string   "title"
-    t.text     "description"
+    t.text     "description_en"
+    t.text     "description_no"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

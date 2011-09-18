@@ -1,28 +1,21 @@
 <% title "Employment" %>
 
 <p>
-  <strong>Company:</strong>
-  <%= @employment.company %>
+  <h4><%= @employment.company %></h4>
 </p>
 <p>
-  <strong>From:</strong>
-  <%= @employment.from %>
-</p>
-<p>
-  <strong>To:</strong>
-  <%= @employment.to %>
-</p>
-<p>
-  <strong>Title:</strong>
   <%= @employment.title %>
 </p>
 <p>
-  <strong>Description:</strong>
-  <%= @employment.description %>
+  <%= @employment.from_to_str %>
 </p>
-
 <p>
-  <%= link_to "Edit", edit_employment_path(@employment) %> |
-  <%= link_to "Destroy", @employment, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= (I18n.locale.to_s == 'no')?"#{@employment.description_no}":"#{@employment.description_en}" %>
+</p>
+<p>
+<% if current_user %>
+  <%= link_to "Edit", edit_employment_path(@employment) %>
+  <%= link_to "Destroy", @employment, :confirm => 'Are you sure?', :method => :delete %>
+<%end%>
   <%= link_to "View All", employments_path %>
 </p>
