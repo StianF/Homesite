@@ -153,7 +153,7 @@ DEPENDENCIES
   authlogic
   cancan
   capistrano
-  coffee-rails (~> 3.1.0)
+  coffee-rails
   compass (>= 0.12.alpha.0)
   jquery-rails
   mocha
@@ -163,7 +163,7 @@ DEPENDENCIES
   rails (= 3.1.0)
   rails3-generators
   sass
-  sass-rails (~> 3.1.0)
+  sass-rails
   sqlite3
   therubyracer
   turn
