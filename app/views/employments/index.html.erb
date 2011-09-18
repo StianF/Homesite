@@ -5,7 +5,7 @@
     <tr>
       <td>
       <h4><%= employment.company %></h4><br />
-      <%= employment.title %><br />
+      <%= (I18n.locale.to_s == 'no')?"#{employment.title_no}":"#{employment.title_en}" %><br />
       <%= employment.from_to_str %><br />
       <p><i><%= (I18n.locale.to_s == 'no')?"#{employment.description_no}":"#{employment.description_en}"%></i></p>
       <%= link_to "Show", employment %>

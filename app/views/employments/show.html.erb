@@ -1,10 +1,10 @@
-<% title "Employment" %>
+<% title (I18n.locale.to_s == 'no')?"Jobb":"Employment" %>
 
 <p>
   <h4><%= @employment.company %></h4>
 </p>
 <p>
-  <%= @employment.title %>
+  <%= (I18n.locale.to_s == 'no')?"#{@employment.title_no}":"#{@employment.title_en}" %>
 </p>
 <p>
   <%= @employment.from_to_str %>

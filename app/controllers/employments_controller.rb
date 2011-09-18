@@ -2,7 +2,7 @@ class EmploymentsController < ApplicationController
   before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
-    @employments = Employment.all
+    @employments = Employment.order("current DESC, employments.to DESC")
   end
 
   def show
