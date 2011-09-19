@@ -1,5 +1,7 @@
 Homesite::Application.routes.draw do
   
+  resources :educations
+
   get "home/index"
 
   resources :projects

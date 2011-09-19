@@ -1,0 +1,19 @@
+
+<% title (I18n.locale.to_s == 'no')?"Utdanning":"Education" %>
+
+<p>
+ <h4><%= (I18n.locale.to_s == 'no')?"#{@education.title_no}":"#{@education.title_en}" %></h4>
+</p>
+<p>
+  <%= @education.from_to_str %>
+</p>
+<p>
+  <%= (I18n.locale.to_s == 'no')?"#{@education.description_no}":"#{@education.description_en}" %>
+</p>
+<p>
+<% if current_user %>
+  <%= link_to "Edit", edit_education_path(@education) %>
+  <%= link_to "Destroy", @education, :confirm => 'Are you sure?', :method => :delete %>
+<%end%>
+  <%= link_to "View All", educations_path %>
+</p>

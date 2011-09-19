@@ -1,0 +1,23 @@
+<% title (I18n.locale.to_s == 'no')?"Utdanning":"Education" %>
+<table>
+
+<% @educations.each do |education| %>
+<tr>
+  <td>
+    <h4><%= (I18n.locale.to_s == 'no')?"#{education.title_no}":"#{education.title_en}" %></h4><br />
+    <%= education.from_to_str %><br />
+    <p><i><%= (I18n.locale.to_s == 'no')?"#{education.description_no}":"#{education.description_en}" %></i></p><br />
+    <%= link_to 'Show', education %>
+    <%if current_user %>
+    <%= link_to 'Edit', edit_education_path(education) %>
+    <%= link_to 'Destroy', education, confirm: 'Are you sure?', method: :delete %>
+    <%end%>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%if current_user %>
+<%= link_to 'New Education', new_education_path %>
+<%end%>

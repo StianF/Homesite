@@ -1,13 +1,25 @@
 <h1>Stian Fredrikstad</h1>
 <% if I18n.locale.to_s == 'no' %>
 <ul>
-  <li>F&oslash;dt: 27.05.1986</li>
+  <li>F&oslash;dt 27.05.1986</li>
+  <li>Fra Gran</li>
+  <li>Bor i Trondheim</li>
 </ul>
-<p>Jeg er en mann p&aring; 25 &aring;r som studerer Datateknikk ved NTNU. Jeg har valgt &aring; g&aring; linjen Komplekse Datasystemer og g&aring;r n&aring; p&aring; mitt 5 &aring;r.</p>
+<p>
+  Jeg er en mann p&aring; 25 &aring;r som studerer Datateknikk ved NTNU i Trondheim. Jeg har valgt fordypning mot linjen Komplekse Datasystemer og er nå inne i mitt 5. år hvor jeg for tiden skriver prosjektoppgave som skal lede til en masteroppgave.
+</p>
 <% else %>
 <ul>
-
+  <li>Born 27.05.1986</li>
+  <li>From Gran</li>
+  <li>Lives in Trondheim</li>
 <ul>
-<p></p>
+<p>
+  I'm a 25 year old man who studies Computer science at NTNU in Trondheim. I have chosen specialization towards Complex Computer Systems and is now in my 5th year where I am currently writing a project which will lead to a master thesis.
+</p>
 
 <% end %>
+<p>
+<%= link_to (image_tag "connect_linkedin.png", :height=>"40px"),"http://no.linkedin.com/pub/stian-fredrikstad/7/16/1" %>
+</p>
+
