@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title_en: MyString
+  title_no: MyString
+  from: 2011-09-19 18:20:31
+  to: 2011-09-19 18:20:31
+  current: false
+  decription_no: MyText
+  description_en: MyText
+
+two:
+  title_en: MyString
+  title_no: MyString
+  from: 2011-09-19 18:20:31
+  to: 2011-09-19 18:20:31
+  current: false
+  decription_no: MyText
+  description_en: MyText

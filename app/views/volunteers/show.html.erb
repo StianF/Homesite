@@ -1,0 +1,18 @@
+<% title (I18n.locale.to_s == 'no')?"Frivillig":"Voulenteer" %>
+
+<p>
+  <h4><%= (I18n.locale.to_s == 'no')?"#{@voulenteer.title_no}":"#{@employment.title_en}" %></h4>
+</p>
+<p>
+  <%= @voulenteer.from_to_str %>
+</p>
+<p>
+  <%= (I18n.locale.to_s == 'no')?"#{@voulenteer.description_no}":"#{@employment.description_en}" %>
+</p>
+<p>
+<% if current_user %>
+  <%= link_to "Edit", edit_voulenteer_path(@voulenteer) %>
+  <%= link_to "Destroy", @voulenteer, :confirm => 'Are you sure?', :method => :delete %>
+<%end%>
+  <%= link_to "View All", voulenteers_path %>
+</p>
