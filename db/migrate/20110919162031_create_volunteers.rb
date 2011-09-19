@@ -6,7 +6,7 @@ class CreateVolunteers < ActiveRecord::Migration
       t.datetime :from
       t.datetime :to
       t.boolean :current
-      t.text :decription_no
+      t.text :description_no
       t.text :description_en
 
       t.timestamps

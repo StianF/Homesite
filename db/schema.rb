@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20110919162031) do
     t.datetime "from"
     t.datetime "to"
     t.boolean  "current"
-    t.text     "decription_no"
+    t.text     "description_no"
     t.text     "description_en"
     t.datetime "created_at"
     t.datetime "updated_at"
