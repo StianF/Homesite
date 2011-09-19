@@ -1,18 +1,18 @@
-<% title (I18n.locale.to_s == 'no')?"Frivillig":"Voulenteer" %>
+<% title (I18n.locale.to_s == 'no')?"Frivillig":"Volunteer" %>
 
 <p>
-  <h4><%= (I18n.locale.to_s == 'no')?"#{@voulenteer.title_no}":"#{@employment.title_en}" %></h4>
+  <h4><%= (I18n.locale.to_s == 'no')?"#{@volunteer.title_no}":"#{@volunteer.title_en}" %></h4>
 </p>
 <p>
-  <%= @voulenteer.from_to_str %>
+  <%= @volunteer.from_to_str %>
 </p>
 <p>
-  <%= (I18n.locale.to_s == 'no')?"#{@voulenteer.description_no}":"#{@employment.description_en}" %>
+  <%= (I18n.locale.to_s == 'no')?"#{@volunteer.description_no}":"#{@volunteer.description_en}" %>
 </p>
 <p>
 <% if current_user %>
-  <%= link_to "Edit", edit_voulenteer_path(@voulenteer) %>
-  <%= link_to "Destroy", @voulenteer, :confirm => 'Are you sure?', :method => :delete %>
+  <%= link_to "Edit", edit_volunteer_path(@voulenteer) %>
+  <%= link_to "Destroy", @volunteer, :confirm => 'Are you sure?', :method => :delete %>
 <%end%>
-  <%= link_to "View All", voulenteers_path %>
+  <%= link_to "View All", volunteers_path %>
 </p>

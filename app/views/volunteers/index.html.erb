@@ -1,15 +1,15 @@
 <% title (I18n.locale.to_s == 'no')?"Frivillig":"Voulenteer" %>
 
 <table>
-  <% for v in @voulenteers %>
+  <% for v in @volunteers %>
     <tr>
       <td>
-      <h4><%= (I18n.locale.to_s == 'no')?"#{employment.title_no}":"#{employment.title_en}" %></h4><br />
+      <h4><%= (I18n.locale.to_s == 'no')?"#{v.title_no}":"#{v.title_en}" %></h4><br />
       <%= v.from_to_str %><br />
       <p><i><%= (I18n.locale.to_s == 'no')?"#{v.description_no}":"#{v.description_en}"%></i></p>
       <%= link_to "Show", v %>
       <% if current_user %>
-      <%= link_to "Edit", edit_voulenteer_path(v) %>
+      <%= link_to "Edit", edit_volunteer_path(v) %>
       <%= link_to "Destroy", v, :confirm => 'Are you sure?', :method => :delete %>
       <%end%>
       </td>
@@ -19,5 +19,5 @@
 
 <br />
 <% if current_user %>
-  <%= link_to "New Voulenteer", new_voulenteer_path %>
+  <%= link_to "New Voulenteer", new_volunteer_path %>
 <% end %>
