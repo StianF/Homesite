@@ -15,8 +15,8 @@
     <td><%= project.url %></td>
     <td><%= link_to 'Show', project %>
     <%if current_user%>
-      |<%= link_to 'Edit', edit_project_path(project) %>
-      |<%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %>
+      | <%= link_to 'Edit', edit_project_path(project) %>
+      | <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %>
     <%end%>
     </td>
   </tr>
