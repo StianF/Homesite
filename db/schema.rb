@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110919101414) do
+ActiveRecord::Schema.define(:version => 20110919162031) do
 
   create_table "educations", :force => true do |t|
     t.string   "title_en"
@@ -69,5 +69,17 @@ ActiveRecord::Schema.define(:version => 20110919101414) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token", :unique => true
+
+  create_table "volunteers", :force => true do |t|
+    t.string   "title_en"
+    t.string   "title_no"
+    t.datetime "from"
+    t.datetime "to"
+    t.boolean  "current"
+    t.text     "decription_no"
+    t.text     "description_en"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
